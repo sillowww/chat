@@ -1,0 +1,9 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "monorepo for a pretty ai chat app.",
+  "private": true,
+  "workspaces": [
+    "pkgs/*"
+  ]
+}
