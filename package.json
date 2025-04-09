@@ -1,9 +1,28 @@
 {
-  "name": "chat",
-  "version": "1.0.0",
-  "description": "monorepo for a pretty ai chat app.",
-  "private": true,
-  "workspaces": [
-    "pkgs/*"
-  ]
+	"name": "chat",
+	"version": "1.0.0",
+	"description": "monorepo for a pretty ai chat app.",
+	"private": true,
+	"scripts": {
+		"lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
+		"lint:eslint": "eslint . --fix",
+		"lint": "run-s lint:*",
+		"format": "prettier --write --no-error-on-unmatched-pattern pkgs/**/src/**/*.{html,ts,tsx,vue}",
+		"cq": "bun lint && bun format"
+	},
+	"devDependencies": {
+		"@types/node": "^22.14.0",
+		"eslint": "^9.22.0",
+		"eslint-plugin-cypress": "^4.2.0",
+		"eslint-plugin-oxlint": "^0.16.0",
+		"eslint-plugin-vue": "~10.0.0",
+		"npm-run-all2": "^7.0.2",
+		"jiti": "^2.4.2",
+		"oxlint": "^0.16.0",
+		"prettier": "3.5.3",
+		"typescript": "~5.8.0"
+	},
+	"workspaces": [
+		"pkgs/*"
+	]
 }
